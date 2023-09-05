@@ -16,8 +16,9 @@ class GameTest {
         game = new Game();
     }
 
+    @DisplayName("GIVEN a new game WHEN printing THEN empty board is printed")
     @Test
-    void givenNewGameWhenPrintingStateThenEmptyBoardIsPrinted() {
+    void givenNewGameWhenPrintingThenEmptyBoardIsPrinted() {
         // given
 
         // when
@@ -33,8 +34,9 @@ class GameTest {
                 """);
     }
 
+    @DisplayName("GIVEN a new game WHEN printing THEN the message 'Player X moves' is printed")
     @Test
-    void givenNewGameWhenPrintingStateThenXMovesIsPrinted() {
+    void givenNewGameWhenPrintingThenXMovesIsPrinted() {
         // given
 
         // when

@@ -16,6 +16,7 @@ class BoardTest {
         board = new Board();
     }
 
+    @DisplayName("GIVEN an empty board WHEN printing THEN an empty grid is returned")
     @Test
     void givenNewBoardWhenPrintingThenEmptyGridIsReturned() {
         // given
@@ -35,6 +36,7 @@ class BoardTest {
         );
     }
 
+    @DisplayName("GIVEN an X in the top left WHEN printing THEN mark is printed")
     @Test
     void givenXMarkInTheTopLeftCornerWhenPrintingThenMarkIsPrinted() {
         // given
@@ -55,6 +57,7 @@ class BoardTest {
         );
     }
 
+    @DisplayName("GIVEN an X in the top right WHEN printing THEN mark is printed")
     @Test
     void givenXMarkInTheTopRightCornerWhenPrintingThenMarkIsPrinted() {
         // given
@@ -75,6 +78,7 @@ class BoardTest {
         );
     }
 
+    @DisplayName("GIVEN multiple Xs WHEN printing THEN all marks are printed")
     @Test
     void givenMultipleXMarksWhenPrintingThenAllMarksArePrinted() {
         // given
@@ -97,6 +101,7 @@ class BoardTest {
         );
     }
 
+    @DisplayName("GIVEN an O in the bottom left WHEN printing THEN mark is printed")
     @Test
     void givenOMarkInTheBottomLeftCornerWhenPrintingThenMarkIsPrinted() {
         // given
