@@ -229,4 +229,31 @@ class GameTest {
 
     }
 
+    @DisplayName("Draw")
+    @Nested
+    class Draw {
+
+        @DisplayName("GIVEN a full board without winner WHEN printing THEN the message 'Draw' is printed")
+        @Test
+        void givenFullBoardWithoutWinnerWhenPrintingThenDrawIsPrinted() {
+            // given
+            board.set(0, 'X');
+            board.set(1, 'X');
+            board.set(5, 'X');
+            board.set(6, 'X');
+            board.set(8, 'X');
+            board.set(2, 'O');
+            board.set(3, 'O');
+            board.set(4, 'O');
+            board.set(7, 'O');
+
+            // when
+            String message = game.print();
+
+            // then
+            assertThat(message).contains("Draw");
+        }
+
+    }
+
 }
