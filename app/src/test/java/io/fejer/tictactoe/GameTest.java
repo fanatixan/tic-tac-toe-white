@@ -161,6 +161,21 @@ class GameTest {
             assertThat(message).contains("Player X won");
         }
 
+        @DisplayName("GIVEN 3 Os in the second row WHEN printing THEN the message 'Player O won' is printed")
+        @Test
+        void givenThreeOMarksInTheSecondRowWhenPrintingThenOWonIsPrinted() {
+            // given
+            board.set(3, 'O');
+            board.set(4, 'O');
+            board.set(5, 'O');
+
+            // when
+            String message = game.print();
+
+            // then
+            assertThat(message).contains("Player O won");
+        }
+
     }
 
 }
