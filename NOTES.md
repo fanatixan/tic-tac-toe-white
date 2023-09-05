@@ -22,5 +22,5 @@
 
 - ✅ UAT 4: Winning with a diagonal line
 - ✅ UAT 5: Draw
-- ⚠ Game: printing board
+- 🚧 Game: printing board
 - ⚠ Bot: alternating steps
