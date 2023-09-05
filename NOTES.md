@@ -10,4 +10,4 @@
 
 - ✅ Init gradle
 - ✅ Board printing
-- ⚠ UAT 1: Starting new game
+- 🚧 UAT 1: Starting new game
