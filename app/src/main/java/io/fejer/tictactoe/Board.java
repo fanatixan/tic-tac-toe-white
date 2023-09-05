@@ -10,4 +10,8 @@ public class Board {
                  | |\s
                 """;
     }
+
+    public void set(int index, char mark) {
+
+    }
 }
