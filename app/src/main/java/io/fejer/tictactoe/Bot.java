@@ -8,6 +8,6 @@ public class Bot {
     }
 
     public int nextStep() {
-        return 0;
+        return 4;
     }
 }
