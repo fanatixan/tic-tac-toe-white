@@ -16,18 +16,12 @@ public class Game {
         char winner = winner();
         if (winner != Board.EMPTY) {
             state = String.format("Player %c won", winner);
-        } if (isBoardFull()) {
+        }
+        if (isBoardFull()) {
             state = "Draw";
         }
 
-        return """
-                 | |\s
-                -+-+-
-                 | |\s
-                -+-+-
-                 | |\s
-                                
-                """ + state;
+        return board.print() + "\n\n" + state;
     }
 
     private char winner() {
