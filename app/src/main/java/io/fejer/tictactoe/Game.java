@@ -1,5 +1,7 @@
 package io.fejer.tictactoe;
 
+import java.util.stream.IntStream;
+
 public class Game {
 
     private final Board board;
@@ -14,6 +16,8 @@ public class Game {
         char winner = winner();
         if (winner != Board.EMPTY) {
             state = String.format("Player %c won", winner);
+        } if (isBoardFull()) {
+            state = "Draw";
         }
 
         return """
@@ -38,6 +42,13 @@ public class Game {
         }
 
         return diagonalWinner();
+    }
+
+    private boolean isBoardFull() {
+        return IntStream.range(0, 9)
+                .map(board::get)
+                .filter(cell -> cell != Board.EMPTY)
+                .count() == 9;
     }
 
     private char columnWinner() {
