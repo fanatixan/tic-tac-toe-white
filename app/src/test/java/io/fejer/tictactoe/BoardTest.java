@@ -97,4 +97,24 @@ class BoardTest {
         );
     }
 
+    @Test
+    void givenOMarkInTheBottomLeftCornerWhenPrintingThenMarkIsPrinted() {
+        // given
+        board.set(6, 'O');
+
+        // when
+        String printedBoard = board.print();
+
+        // then
+        assertThat(printedBoard).isEqualTo(
+                """
+                         | |\s
+                        -+-+-
+                         | |\s
+                        -+-+-
+                        O| |\s
+                        """
+        );
+    }
+
 }
