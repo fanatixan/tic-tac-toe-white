@@ -193,4 +193,25 @@ class GameTest {
 
     }
 
+    @DisplayName("Winning with a horizontal line")
+    @Nested
+    class DiagonalWin {
+
+        @DisplayName("GIVEN 3 Xs in the forward diagonal WHEN printing THEN the message 'Player X won' is printed")
+        @Test
+        void givenThreeXMarksInTheForwardDiagonalWhenPrintingThenXWonIsPrinted() {
+            // given
+            board.set(2, 'X');
+            board.set(4, 'X');
+            board.set(6, 'X');
+
+            // when
+            String message = game.print();
+
+            // then
+            assertThat(message).contains("Player X won");
+        }
+
+    }
+
 }
