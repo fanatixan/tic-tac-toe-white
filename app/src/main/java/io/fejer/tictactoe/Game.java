@@ -37,7 +37,7 @@ public class Game {
             return rowWinner;
         }
 
-        return Board.EMPTY;
+        return diagonalWinner();
     }
 
     private char columnWinner() {
@@ -54,7 +54,7 @@ public class Game {
         return cellsWinner(2, 5, 8);
     }
 
-    private Character rowWinner() {
+    private char rowWinner() {
         char firstRowWinner = cellsWinner(0, 1, 2);
         if (firstRowWinner != Board.EMPTY) {
             return firstRowWinner;
@@ -66,6 +66,10 @@ public class Game {
         }
 
         return cellsWinner(6, 7, 8);
+    }
+
+    private char diagonalWinner() {
+        return cellsWinner(2, 4, 6);
     }
 
     private char cellsWinner(int index1, int index2, int index3) {
