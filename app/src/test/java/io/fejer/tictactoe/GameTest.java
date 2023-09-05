@@ -193,7 +193,7 @@ class GameTest {
 
     }
 
-    @DisplayName("Winning with a horizontal line")
+    @DisplayName("Winning with a diagonal")
     @Nested
     class DiagonalWin {
 
@@ -210,6 +210,21 @@ class GameTest {
 
             // then
             assertThat(message).contains("Player X won");
+        }
+
+        @DisplayName("GIVEN 3 Os in the backward diagonal WHEN printing THEN the message 'Player O won' is printed")
+        @Test
+        void givenThreeOMarksInTheBackwardDiagonalWhenPrintingThenOWonIsPrinted() {
+            // given
+            board.set(0, 'O');
+            board.set(4, 'O');
+            board.set(8, 'O');
+
+            // when
+            String message = game.print();
+
+            // then
+            assertThat(message).contains("Player O won");
         }
 
     }
