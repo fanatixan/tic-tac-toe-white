@@ -15,6 +15,10 @@ public class Game {
             state = "Player X won";
         }
 
+        if (board.get(1) == board.get(4) && board.get(1) == board.get(7) && board.get(1) == 'X') {
+            state = "Player X won";
+        }
+
         return """
                  | |\s
                 -+-+-
