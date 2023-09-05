@@ -11,7 +11,7 @@ import java.util.function.IntSupplier;
 import java.util.function.Supplier;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @DisplayName("Bot")
 class BotTest {
@@ -41,6 +41,7 @@ class BotTest {
 
         // then
         assertThat(step).isEqualTo(randomValue);
+        verify(random, atLeastOnce()).getAsInt();
     }
 
 }
