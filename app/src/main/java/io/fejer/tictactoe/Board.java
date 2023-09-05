@@ -2,10 +2,10 @@ package io.fejer.tictactoe;
 
 public class Board {
 
-    private boolean hasSteps;
+    private int step = -1;
 
     public String print() {
-        if (!hasSteps) {
+        if (step == -1) {
             return """
                      | |\s
                     -+-+-
@@ -15,8 +15,18 @@ public class Board {
                     """;
         }
 
+        if (step == 0) {
+            return """
+                    X| |\s
+                    -+-+-
+                     | |\s
+                    -+-+-
+                     | |\s
+                    """;
+        }
+
         return """
-                X| |\s
+                 | |X
                 -+-+-
                  | |\s
                 -+-+-
@@ -25,6 +35,6 @@ public class Board {
     }
 
     public void set(int index, char mark) {
-        hasSteps = true;
+        step = index;
     }
 }
