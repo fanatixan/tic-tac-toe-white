@@ -70,6 +70,11 @@ public class Game {
             return secondRowWinner;
         }
 
+        char thirdRowWinner = cellsWinner(6, 7, 8);
+        if (thirdRowWinner != Board.EMPTY) {
+            return thirdRowWinner;
+        }
+
         return Board.EMPTY;
     }
 
