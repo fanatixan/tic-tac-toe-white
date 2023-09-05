@@ -8,6 +8,6 @@
 
 ## Pomodoro 1
 
-- ⚠ Init gradle
+- ✅ Init gradle
 - ⚠ Board printing
 - ⚠ UAT 1: Starting new game
