@@ -29,6 +29,6 @@ public class Board {
     }
 
     public void set(int index, char mark) {
-        board[index] = 'X';
+        board[index] = mark;
     }
 }
