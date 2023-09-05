@@ -11,16 +11,9 @@ public class Game {
     public String print() {
         String state = "Player X moves";
 
-        if (board.get(0) == board.get(3) && board.get(0) == board.get(6) && board.get(0) != Board.EMPTY) {
-            state = String.format("Player %c won", board.get(0));
-        }
-
-        if (board.get(1) == board.get(4) && board.get(1) == board.get(7) && board.get(1) == 'X') {
-            state = "Player X won";
-        }
-
-        if (board.get(2) == board.get(5) && board.get(2) == board.get(8) && board.get(2) == 'X') {
-            state = "Player X won";
+        char winner = winner();
+        if (winner != Board.EMPTY) {
+            state = String.format("Player %c won", winner);
         }
 
         return """
@@ -32,4 +25,32 @@ public class Game {
                                 
                 """ + state;
     }
+
+    private char winner() {
+        char firstColumnWinner = cellsWinner(0, 3, 6);
+        if (firstColumnWinner != Board.EMPTY) {
+            return firstColumnWinner;
+        }
+
+        char secondColumnWinner = cellsWinner(1, 4, 7);
+        if (secondColumnWinner != Board.EMPTY) {
+            return secondColumnWinner;
+        }
+
+        char thirdColumnWinner = cellsWinner(2, 5, 8);
+        if (thirdColumnWinner != Board.EMPTY) {
+            return thirdColumnWinner;
+        }
+
+        return Board.EMPTY;
+    }
+
+    private char cellsWinner(int index1, int index2, int index3) {
+        if (board.get(index1) == board.get(index2) && board.get(index1) == board.get(index3) && board.get(index1) != Board.EMPTY) {
+            return board.get(index1);
+        }
+
+        return Board.EMPTY;
+    }
+
 }
