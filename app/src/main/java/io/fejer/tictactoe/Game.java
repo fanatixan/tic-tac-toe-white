@@ -27,6 +27,20 @@ public class Game {
     }
 
     private char winner() {
+        char columnWinner = columnWinner();
+        if (columnWinner != Board.EMPTY) {
+            return columnWinner;
+        }
+
+        char rowWinner = rowWinner();
+        if (rowWinner != Board.EMPTY) {
+            return rowWinner;
+        }
+
+        return Board.EMPTY;
+    }
+
+    private char columnWinner() {
         char firstColumnWinner = cellsWinner(0, 3, 6);
         if (firstColumnWinner != Board.EMPTY) {
             return firstColumnWinner;
@@ -42,6 +56,10 @@ public class Game {
             return thirdColumnWinner;
         }
 
+        return Board.EMPTY;
+    }
+
+    private Character rowWinner() {
         char firstRowWinner = cellsWinner(0, 1, 2);
         if (firstRowWinner != Board.EMPTY) {
             return firstRowWinner;
