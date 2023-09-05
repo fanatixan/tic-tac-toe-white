@@ -51,12 +51,7 @@ public class Game {
             return secondColumnWinner;
         }
 
-        char thirdColumnWinner = cellsWinner(2, 5, 8);
-        if (thirdColumnWinner != Board.EMPTY) {
-            return thirdColumnWinner;
-        }
-
-        return Board.EMPTY;
+        return cellsWinner(2, 5, 8);
     }
 
     private Character rowWinner() {
@@ -70,12 +65,7 @@ public class Game {
             return secondRowWinner;
         }
 
-        char thirdRowWinner = cellsWinner(6, 7, 8);
-        if (thirdRowWinner != Board.EMPTY) {
-            return thirdRowWinner;
-        }
-
-        return Board.EMPTY;
+        return cellsWinner(6, 7, 8);
     }
 
     private char cellsWinner(int index1, int index2, int index3) {
