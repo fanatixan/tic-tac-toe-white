@@ -53,6 +53,20 @@ class GameTest {
     @Nested
     class VerticalWin {
 
+        @DisplayName("GIVEN 2 Xs in the first column WHEN printing THEN the message 'Player X won' is not printed")
+        @Test
+        void givenTwoXMarksInTheFirstColumnWhenPrintingThenXWonIsNotPrinted() {
+            // given
+            board.set(0, 'X');
+            board.set(3, 'X');
+
+            // when
+            String message = game.print();
+
+            // then
+            assertThat(message).doesNotContain("Player X won");
+        }
+
         @DisplayName("GIVEN 3 Xs in the first column WHEN printing THEN the message 'Player X won' is printed")
         @Test
         void givenThreeXMarksInTheFirstColumnWhenPrintingThenXWonIsPrinted() {
