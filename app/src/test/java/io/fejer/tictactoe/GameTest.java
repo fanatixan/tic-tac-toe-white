@@ -33,4 +33,15 @@ class GameTest {
                 """);
     }
 
+    @Test
+    void givenNewGameWhenPrintingStateThenXMovesIsPrinted() {
+        // given
+
+        // when
+        String message = game.print();
+
+        // then
+        assertThat(message).contains("Player X moves");
+    }
+
 }
