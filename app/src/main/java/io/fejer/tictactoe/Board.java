@@ -1,40 +1,34 @@
 package io.fejer.tictactoe;
 
+import java.util.Arrays;
+
 public class Board {
 
-    private int step = -1;
+    private static final String BOARD_TEMPLATE = """
+            0|1|2
+            -+-+-
+            3|4|5
+            -+-+-
+            6|7|8
+            """;
+
+    private char[] board = new char[9];
+
+    public Board() {
+        Arrays.fill(board, ' ');
+    }
 
     public String print() {
-        if (step == -1) {
-            return """
-                     | |\s
-                    -+-+-
-                     | |\s
-                    -+-+-
-                     | |\s
-                    """;
+        String result = BOARD_TEMPLATE;
+
+        for (int i = 0; i < 9; i++) {
+            result = result.replace(String.valueOf(i), String.valueOf(board[i]));
         }
 
-        if (step == 0) {
-            return """
-                    X| |\s
-                    -+-+-
-                     | |\s
-                    -+-+-
-                     | |\s
-                    """;
-        }
-
-        return """
-                 | |X
-                -+-+-
-                 | |\s
-                -+-+-
-                 | |\s
-                """;
+        return result;
     }
 
     public void set(int index, char mark) {
-        step = index;
+        board[index] = 'X';
     }
 }
