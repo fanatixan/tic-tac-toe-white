@@ -55,4 +55,24 @@ class BoardTest {
         );
     }
 
+    @Test
+    void givenXMarkInTheTopRightCornerWhenPrintingThenMarkIsPrinted() {
+        // given
+        board.set(2, 'X');
+
+        // when
+        String printedBoard = board.print();
+
+        // then
+        assertThat(printedBoard).isEqualTo(
+                """
+                         | |X
+                        -+-+-
+                         | |\s
+                        -+-+-
+                         | |\s
+                        """
+        );
+    }
+
 }
