@@ -142,4 +142,25 @@ class GameTest {
 
     }
 
+    @DisplayName("Winning with a horizontal line")
+    @Nested
+    class HorizontalWin {
+
+        @DisplayName("GIVEN 3 Xs in the first row WHEN printing THEN the message 'Player X won' is printed")
+        @Test
+        void givenThreeXMarksInTheFirstRowWhenPrintingThenXWonIsPrinted() {
+            // given
+            board.set(0, 'X');
+            board.set(1, 'X');
+            board.set(2, 'X');
+
+            // when
+            String message = game.print();
+
+            // then
+            assertThat(message).contains("Player X won");
+        }
+
+    }
+
 }
