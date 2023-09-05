@@ -9,14 +9,19 @@ public class Game {
     }
 
     public String print() {
+        String state = "Player X moves";
+
+        if (board.get(0) == 'X') {
+            state = "Player X won";
+        }
+
         return """
                  | |\s
                 -+-+-
                  | |\s
                 -+-+-
                  | |\s
-                
-                Player X moves
-                """;
+                                
+                """ + state;
     }
 }

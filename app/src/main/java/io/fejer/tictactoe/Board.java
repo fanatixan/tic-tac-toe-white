@@ -32,4 +32,9 @@ public class Board {
     public void set(int index, char mark) {
         board[index] = mark;
     }
+
+    public char get(int index) {
+        return board[index];
+    }
+
 }
