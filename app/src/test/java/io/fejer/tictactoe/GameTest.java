@@ -67,6 +67,19 @@ class GameTest {
             assertThat(message).doesNotContain("Player X won");
         }
 
+        @DisplayName("GIVEN 1 X in the bottom left corner WHEN printing THEN the message 'Player X won' is not printed")
+        @Test
+        void givenAnXMarksInTheBottomLeftWhenPrintingThenXWonIsNotPrinted() {
+            // given
+            board.set(6, 'X');
+
+            // when
+            String message = game.print();
+
+            // then
+            assertThat(message).doesNotContain("Player X won");
+        }
+
         @DisplayName("GIVEN 3 Xs in the first column WHEN printing THEN the message 'Player X won' is printed")
         @Test
         void givenThreeXMarksInTheFirstColumnWhenPrintingThenXWonIsPrinted() {
