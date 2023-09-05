@@ -110,6 +110,21 @@ class GameTest {
             assertThat(message).contains("Player X won");
         }
 
+        @DisplayName("GIVEN 3 Xs in the third column WHEN printing THEN the message 'Player X won' is printed")
+        @Test
+        void givenThreeXMarksInTheThirdColumnWhenPrintingThenXWonIsPrinted() {
+            // given
+            board.set(2, 'X');
+            board.set(5, 'X');
+            board.set(8, 'X');
+
+            // when
+            String message = game.print();
+
+            // then
+            assertThat(message).contains("Player X won");
+        }
+
     }
 
 }
