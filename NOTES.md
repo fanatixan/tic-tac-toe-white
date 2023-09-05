@@ -14,6 +14,6 @@
 
 ## Pomodoro 2
 
-- ⚠ UAT 2: Winning with a vertical line
+- 🚧 UAT 2: Winning with a vertical line
 - ⚠ UAT 3: Winning with a horizontal line
 - ⚠ UAT 4: Winning with a diagonal line
