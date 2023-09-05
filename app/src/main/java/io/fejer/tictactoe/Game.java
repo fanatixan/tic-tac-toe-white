@@ -42,6 +42,11 @@ public class Game {
             return thirdColumnWinner;
         }
 
+        char firstRowWinner = cellsWinner(0, 1, 2);
+        if (firstRowWinner != Board.EMPTY) {
+            return firstRowWinner;
+        }
+
         return Board.EMPTY;
     }
 
