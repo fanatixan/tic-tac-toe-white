@@ -11,7 +11,7 @@ public class Game {
     public String print() {
         String state = "Player X moves";
 
-        if (board.get(0) == 'X') {
+        if (board.get(6) == 'X') {
             state = "Player X won";
         }
 
