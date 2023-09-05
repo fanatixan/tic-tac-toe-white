@@ -12,11 +12,11 @@
 
 ```
 Game Board Creation...
-| |
+ | | 
 -+-+-
-| |
+ | | 
 -+-+-
-| |
+ | | 
 Board Created.
 The game will start with player X
 ```
@@ -25,9 +25,9 @@ The game will start with player X
 
 ```
 Player X:
-X| |
+X| | 
 -+-+-
-X|O|
+X|O| 
 -+-+-
 X| |O
 PLAYER X WON!
@@ -41,7 +41,7 @@ X| |X
 -+-+-
 O|O|O
 -+-+-
-X| |
+X| | 
 PLAYER O WON!
 ```
 
@@ -49,9 +49,9 @@ PLAYER O WON!
 
 ```
 Player X:
-X| |
+X| | 
 -+-+-
-O|X|
+O|X| 
 -+-+-
 O| |X
 PLAYER X WON!
