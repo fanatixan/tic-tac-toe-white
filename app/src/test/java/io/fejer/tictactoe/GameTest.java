@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 @DisplayName("Game")
 class GameTest {
@@ -39,6 +41,21 @@ class GameTest {
                     -+-+-
                      | |\s
                     """);
+        }
+
+        @DisplayName("GIVEN game WHEN printing THEN the board is printed")
+        @Test
+        void givenNewGameWhenPrintingThenXMovesIsPrinted() {
+            // given
+            Board board = mock(Board.class);
+            game = new Game(board);
+            when(board.print()).thenReturn("<board>");
+
+            // when
+            String message = game.print();
+
+            // then
+            assertThat(message).contains("<board>");
         }
     }
 
