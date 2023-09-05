@@ -13,7 +13,7 @@ public class Board {
             """;
     public static final char EMPTY = ' ';
 
-    private char[] board = new char[9];
+    private final char[] board = new char[9];
 
     public Board() {
         Arrays.fill(board, EMPTY);
