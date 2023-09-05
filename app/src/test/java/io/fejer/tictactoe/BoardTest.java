@@ -75,4 +75,26 @@ class BoardTest {
         );
     }
 
+    @Test
+    void givenMultipleXMarksWhenPrintingThenAllMarksArePrinted() {
+        // given
+        board.set(4, 'X');
+        board.set(8, 'X');
+        board.set(5, 'X');
+
+        // when
+        String printedBoard = board.print();
+
+        // then
+        assertThat(printedBoard).isEqualTo(
+                """
+                         | |\s
+                        -+-+-
+                         |X|X
+                        -+-+-
+                         | |X
+                        """
+        );
+    }
+
 }
