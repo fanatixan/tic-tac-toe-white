@@ -11,11 +11,12 @@ public class Board {
             -+-+-
             6|7|8
             """;
+    public static final char EMPTY = ' ';
 
     private char[] board = new char[9];
 
     public Board() {
-        Arrays.fill(board, ' ');
+        Arrays.fill(board, EMPTY);
     }
 
     public String print() {
