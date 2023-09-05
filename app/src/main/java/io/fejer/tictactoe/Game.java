@@ -69,7 +69,12 @@ public class Game {
     }
 
     private char diagonalWinner() {
-        return cellsWinner(2, 4, 6);
+        char forwardDiagonalWinner = cellsWinner(2, 4, 6);
+        if (forwardDiagonalWinner != Board.EMPTY) {
+            return forwardDiagonalWinner;
+        }
+
+        return cellsWinner(0, 4, 8);
     }
 
     private char cellsWinner(int index1, int index2, int index3) {
