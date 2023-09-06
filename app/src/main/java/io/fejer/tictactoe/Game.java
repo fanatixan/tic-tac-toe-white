@@ -107,8 +107,10 @@ public class Game {
     }
 
     public void start(Bot bot, Consumer<String> printer) {
+        printer.accept("");
         while (winner() == Board.EMPTY && !isBoardFull()) {
             step(bot.nextStep());
+            printer.accept("");
         }
     }
 
