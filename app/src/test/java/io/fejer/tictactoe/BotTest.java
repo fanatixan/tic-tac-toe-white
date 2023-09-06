@@ -3,12 +3,10 @@ package io.fejer.tictactoe;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import java.util.function.IntSupplier;
-import java.util.function.Supplier;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
@@ -27,6 +25,8 @@ class BotTest {
     void setup() {
         MockitoAnnotations.openMocks(this);
         bot = new Bot(board, random);
+
+        when(board.get(anyInt())).thenReturn(Board.EMPTY);
     }
 
     @DisplayName("WHEN getting next step THEN random step is returned")
@@ -42,6 +42,20 @@ class BotTest {
         // then
         assertThat(step).isEqualTo(randomValue);
         verify(random, atLeastOnce()).getAsInt();
+    }
+
+    @DisplayName("GIVEN random returns non-empty cell WHEN getting next step THEN new cell generated")
+    @Test
+    void givenNonEmptyCellWhenGettingNextStepThenRandomStepIsReturned() {
+        // given
+        when(random.getAsInt()).thenReturn(4).thenReturn(5);
+        when(board.get(4)).thenReturn('X');
+
+        // when
+        int step = bot.nextStep();
+
+        // then
+        assertThat(step).isEqualTo(5);
     }
 
 }
