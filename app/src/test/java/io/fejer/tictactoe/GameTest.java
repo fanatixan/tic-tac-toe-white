@@ -389,6 +389,28 @@ class GameTest {
             verify(random, times(5)).getAsInt();
         }
 
+        @DisplayName("WHEN starting a game THEN it stops when O wins")
+        @Test
+        void whenStartingThenItStopsWhenOWins() {
+            // given
+            when(random.getAsInt())
+                    .thenReturn(0)
+                    .thenReturn(4)
+                    .thenReturn(1)
+                    .thenReturn(2)
+                    .thenReturn(5)
+                    .thenReturn(8)
+                    .thenReturn(7)
+                    .thenReturn(6);
+
+            // when
+            game.start(bot);
+
+            // then
+            assertThat(game.print()).contains("Player O won");
+            verify(random, times(8)).getAsInt();
+        }
+
     }
 
 }
