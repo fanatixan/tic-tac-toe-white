@@ -91,6 +91,6 @@ public class Game {
     }
 
     public void step(int index) {
-        board.set(4, 'X');
+        board.set(index, 'X');
     }
 }
