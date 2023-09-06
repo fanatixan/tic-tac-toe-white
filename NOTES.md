@@ -24,3 +24,10 @@
 - ✅ UAT 5: Draw
 - ✅ Game: printing board
 - 🚧 Bot: alternating steps
+
+## Pomodoro 4
+
+- 🚧 Bot: alternating steps
+- ⚠ Game logic: rounds
+- ⚠ Game logic: delay between steps
+- ⚠ Make runnable
