@@ -1,5 +1,6 @@
 package io.fejer.tictactoe;
 
+import java.util.function.Consumer;
 import java.util.stream.IntStream;
 
 public class Game {
@@ -105,7 +106,7 @@ public class Game {
         return 'O';
     }
 
-    public void start(Bot bot) {
+    public void start(Bot bot, Consumer<String> printer) {
         while (winner() == Board.EMPTY && !isBoardFull()) {
             step(bot.nextStep());
         }

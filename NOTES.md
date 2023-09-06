@@ -31,3 +31,9 @@
 - 🚧 Game logic: rounds
 - ⚠ Game logic: delay between steps
 - ⚠ Make runnable
+
+## Pomodoro 5
+
+- 🚧 Game logic: rounds
+- ⚠ Game logic: delay between steps
+- ⚠ Make runnable

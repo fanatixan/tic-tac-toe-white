@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.util.function.Consumer;
 import java.util.function.IntSupplier;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -364,6 +365,9 @@ class GameTest {
         @Mock
         IntSupplier random;
 
+        @Mock
+        Consumer<String> printer;
+
         @BeforeEach
         void setup() {
             MockitoAnnotations.openMocks(this);
@@ -382,7 +386,7 @@ class GameTest {
                     .thenReturn(2);
 
             // when
-            game.start(bot);
+            game.start(bot, printer);
 
             // then
             assertThat(game.print()).contains("Player X won");
@@ -404,7 +408,7 @@ class GameTest {
                     .thenReturn(6);
 
             // when
-            game.start(bot);
+            game.start(bot, printer);
 
             // then
             assertThat(game.print()).contains("Player O won");
@@ -427,11 +431,29 @@ class GameTest {
                     .thenReturn(8);
 
             // when
-            game.start(bot);
+            game.start(bot, printer);
 
             // then
             assertThat(game.print()).contains("Draw");
             verify(random, times(9)).getAsInt();
+        }
+
+        @DisplayName("WHEN starting a game THEN it prints every step")
+        @Test
+        void whenStartingThenItPrintsEveryStep() {
+            // given
+            when(random.getAsInt())
+                    .thenReturn(0)
+                    .thenReturn(3)
+                    .thenReturn(1)
+                    .thenReturn(4)
+                    .thenReturn(2);
+
+            // when
+            game.start(bot, printer);
+
+            // then
+            verify(printer, times(6)).accept(any());
         }
 
     }
