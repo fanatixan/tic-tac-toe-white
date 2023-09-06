@@ -5,6 +5,7 @@ import java.util.stream.IntStream;
 public class Game {
 
     private final Board board;
+    private int stepCount;
 
     public Game(Board board) {
         this.board = board;
@@ -91,6 +92,16 @@ public class Game {
     }
 
     public void step(int index) {
-        board.set(index, 'X');
+        board.set(index, currentPlayer());
+        stepCount++;
     }
+
+    private char currentPlayer() {
+        if (stepCount == 0) {
+            return 'X';
+        }
+
+        return 'O';
+    }
+
 }
