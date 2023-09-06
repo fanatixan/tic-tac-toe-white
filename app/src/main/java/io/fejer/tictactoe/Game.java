@@ -106,6 +106,10 @@ public class Game {
     }
 
     public void start(Bot bot) {
-
+        while (winner() != 'X') {
+            step(bot.nextStep());
+        }
     }
+
+
 }
