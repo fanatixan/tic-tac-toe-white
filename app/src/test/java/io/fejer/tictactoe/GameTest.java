@@ -462,6 +462,14 @@ class GameTest {
                      | |\s
                     
                     Player X moves""");
+            verify(printer).accept("""
+                    X| |\s
+                    -+-+-
+                     | |\s
+                    -+-+-
+                     | |\s
+                    
+                    Player O moves""");
         }
 
     }
