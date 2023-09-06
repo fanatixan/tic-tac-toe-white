@@ -90,4 +90,7 @@ public class Game {
         return Board.EMPTY;
     }
 
+    public void step(int index) {
+
+    }
 }
