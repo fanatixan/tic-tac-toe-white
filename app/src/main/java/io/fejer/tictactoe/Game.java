@@ -110,6 +110,7 @@ public class Game {
     public void start(Bot bot, Consumer<String> printer, IntConsumer sleeper) {
         printer.accept(print());
         while (winner() == Board.EMPTY && !isBoardFull()) {
+            sleeper.accept(2000);
             step(bot.nextStep());
             printer.accept(print());
         }
