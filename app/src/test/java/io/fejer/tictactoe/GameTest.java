@@ -4,10 +4,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import java.util.function.IntSupplier;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @DisplayName("Game")
 class GameTest {
@@ -348,6 +351,42 @@ class GameTest {
 
             // then
             assertThat(board.get(8)).isEqualTo('X');
+        }
+
+    }
+
+    @DisplayName("Rounds")
+    @Nested
+    class Rounds {
+
+        Bot bot;
+
+        @Mock
+        IntSupplier random;
+
+        @BeforeEach
+        void setup() {
+            MockitoAnnotations.openMocks(this);
+            bot = new Bot(board, random);
+        }
+
+        @DisplayName("WHEN starting a game THEN it stops when X wins")
+        @Test
+        void whenStartingThenItStopsWhenXWins() {
+            // given
+            when(random.getAsInt())
+                    .thenReturn(0)
+                    .thenReturn(3)
+                    .thenReturn(1)
+                    .thenReturn(4)
+                    .thenReturn(2);
+
+            // when
+            game.start(bot);
+
+            // then
+            assertThat(game.print()).contains("Player X won");
+            verify(random, times(5)).getAsInt();
         }
 
     }

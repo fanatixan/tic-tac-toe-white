@@ -105,4 +105,7 @@ public class Game {
         return 'O';
     }
 
+    public void start(Bot bot) {
+
+    }
 }
