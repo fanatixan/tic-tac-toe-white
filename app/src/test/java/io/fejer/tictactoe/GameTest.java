@@ -323,6 +323,20 @@ class GameTest {
             assertThat(board.get(0)).isEqualTo('O');
         }
 
+        @DisplayName("GIVEN two steps WHEN stepping to the bottom THEN it's player X's turn")
+        @Test
+        void givenTwoStepsWhenSteppingToTheBottomThenItsPlayerXTurn() {
+            // given
+            game.step(1);
+            game.step(6);
+
+            // when
+            game.step(8);
+
+            // then
+            assertThat(board.get(8)).isEqualTo('X');
+        }
+
     }
 
 }
