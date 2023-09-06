@@ -74,6 +74,19 @@ class GameTest {
             assertThat(message).contains("Player X moves");
         }
 
+        @DisplayName("GIVEN one step WHEN printing THEN the message 'Player O moves' is printed")
+        @Test
+        void givenOneStepWhenPrintingThenXMovesIsPrinted() {
+            // given
+            game.step(0);
+
+            // when
+            String message = game.print();
+
+            // then
+            assertThat(message).contains("Player O moves");
+        }
+
         @DisplayName("Winning with a vertical line")
         @Nested
         class VerticalWin {
