@@ -13,10 +13,10 @@ public class Bot {
     }
 
     public int nextStep() {
-        int step = random.getAsInt();
-        if (board.get(step) != Board.EMPTY) {
+        int step;
+        do  {
             step = random.getAsInt();
-        }
+        } while (board.get(step) != Board.EMPTY);
         return step;
     }
 }
