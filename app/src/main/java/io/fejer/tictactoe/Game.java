@@ -106,7 +106,7 @@ public class Game {
     }
 
     public void start(Bot bot) {
-        while (winner() != 'X') {
+        while (winner() == Board.EMPTY) {
             step(bot.nextStep());
         }
     }
