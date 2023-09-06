@@ -12,14 +12,15 @@ public class Game {
     }
 
     public String print() {
-        String state = "Player X moves";
+        String state;
 
         char winner = winner();
         if (winner != Board.EMPTY) {
             state = String.format("Player %c won", winner);
-        }
-        if (isBoardFull()) {
+        } else if (isBoardFull()) {
             state = "Draw";
+        } else {
+            state = String.format("Player %c moves", currentPlayer());
         }
 
         return board.print() + "\n\n" + state;

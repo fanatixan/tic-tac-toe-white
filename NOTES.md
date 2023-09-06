@@ -27,7 +27,7 @@
 
 ## Pomodoro 4
 
-- 🚧 Bot: alternating steps
+- ✅ Bot: alternating steps
 - ⚠ Game logic: rounds
 - ⚠ Game logic: delay between steps
 - ⚠ Make runnable
