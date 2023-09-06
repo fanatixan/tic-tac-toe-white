@@ -454,6 +454,15 @@ class GameTest {
 
             // then
             verify(printer, times(6)).accept(any());
+            verify(printer).accept("""
+                     | |\s
+                    -+-+-
+                     | |\s
+                    -+-+-
+                     | |\s
+                    
+                    Player X moves
+                    """);
         }
 
     }
