@@ -97,7 +97,7 @@ public class Game {
     }
 
     private char currentPlayer() {
-        if (stepCount == 0) {
+        if (stepCount % 2 == 0) {
             return 'X';
         }
 
