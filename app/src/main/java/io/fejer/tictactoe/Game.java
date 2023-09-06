@@ -110,7 +110,7 @@ public class Game {
         printer.accept(print());
         while (winner() == Board.EMPTY && !isBoardFull()) {
             step(bot.nextStep());
-            printer.accept("");
+            printer.accept(print());
         }
     }
 
