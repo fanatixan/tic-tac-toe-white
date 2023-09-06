@@ -36,4 +36,4 @@
 
 - ✅ Game logic: rounds
 - ✅ Game logic: delay between steps
-- ⚠ Make runnable
+- ✅ Make runnable
