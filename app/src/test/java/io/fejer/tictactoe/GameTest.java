@@ -461,8 +461,7 @@ class GameTest {
                     -+-+-
                      | |\s
                     
-                    Player X moves
-                    """);
+                    Player X moves""");
         }
 
     }

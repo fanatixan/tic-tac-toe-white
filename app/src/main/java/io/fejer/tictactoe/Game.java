@@ -24,7 +24,7 @@ public class Game {
             state = String.format("Player %c moves", currentPlayer());
         }
 
-        return board.print() + "\n\n" + state;
+        return board.print() + "\n" + state;
     }
 
     private char winner() {
@@ -107,7 +107,7 @@ public class Game {
     }
 
     public void start(Bot bot, Consumer<String> printer) {
-        printer.accept("");
+        printer.accept(print());
         while (winner() == Board.EMPTY && !isBoardFull()) {
             step(bot.nextStep());
             printer.accept("");
