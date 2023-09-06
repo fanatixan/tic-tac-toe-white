@@ -411,6 +411,29 @@ class GameTest {
             verify(random, times(8)).getAsInt();
         }
 
+        @DisplayName("WHEN starting a game THEN it stops when it's a draw")
+        @Test
+        void whenStartingThenItStopsWhenItsADraw() {
+            // given
+            when(random.getAsInt())
+                    .thenReturn(0)
+                    .thenReturn(2)
+                    .thenReturn(1)
+                    .thenReturn(3)
+                    .thenReturn(5)
+                    .thenReturn(4)
+                    .thenReturn(6)
+                    .thenReturn(7)
+                    .thenReturn(8);
+
+            // when
+            game.start(bot);
+
+            // then
+            assertThat(game.print()).contains("Draw");
+            verify(random, times(9)).getAsInt();
+        }
+
     }
 
 }
