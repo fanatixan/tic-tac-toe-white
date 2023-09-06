@@ -286,9 +286,9 @@ class GameTest {
     @Nested
     class Steps {
 
-        @DisplayName("GIVEN new game WHEN stepping THEN it's player X's turn")
+        @DisplayName("GIVEN new game WHEN stepping to the center THEN it's player X's turn")
         @Test
-        void givenNewGameWhenSteppingThenItsPlayerXTurn() {
+        void givenNewGameWhenSteppingToTheCenterThenItsPlayerXTurn() {
             // given
 
             // when
@@ -296,6 +296,18 @@ class GameTest {
 
             // then
             assertThat(board.get(4)).isEqualTo('X');
+        }
+
+        @DisplayName("GIVEN new game WHEN stepping to the bottom THEN it's player X's turn")
+        @Test
+        void givenNewGameWhenSteppingToTheBottomThenItsPlayerXTurn() {
+            // given
+
+            // when
+            game.step(7);
+
+            // then
+            assertThat(board.get(7)).isEqualTo('X');
         }
 
     }
