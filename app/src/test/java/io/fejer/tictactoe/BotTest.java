@@ -58,4 +58,25 @@ class BotTest {
         assertThat(step).isEqualTo(5);
     }
 
+    @DisplayName("GIVEN random returns multiple non-empty cell WHEN getting next step THEN new cell generated")
+    @Test
+    void givenMultipleNonEmptyCellWhenGettingNextStepThenRandomStepIsReturned() {
+        // given
+        when(random.getAsInt())
+                .thenReturn(4)
+                .thenReturn(5)
+                .thenReturn(0)
+                .thenReturn(8);
+
+        when(board.get(4)).thenReturn('X');
+        when(board.get(5)).thenReturn('X');
+        when(board.get(0)).thenReturn('X');
+
+        // when
+        int step = bot.nextStep();
+
+        // then
+        assertThat(step).isEqualTo(8);
+    }
+
 }
